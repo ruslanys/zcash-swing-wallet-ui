@@ -25,13 +25,13 @@ quite-user-friendly [installation guide](https://www.cryptocompare.com/wallets/g
 and [usage guide](https://www.cryptocompare.com/wallets/guides/how-to-use-the-zcash-gui-wallet).
 The following video also explains how to [set up the GUI wallet](https://www.youtube.com/watch?v=IDifG4h1bgE). 
 Users who insist on downloading a binary release may instead 
-use [ZCash Desktop GUI Wallet - binary release v0.46-beta](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Release_0.46-beta.md)
+use [ZCash Desktop GUI Wallet - binary release v0.54-beta](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Release_0.54-beta.md)
 
 
 1. Operating system and tools
 
-   As of December 2016 (ZCash v1.0.3) this program is only intended to work on Linux and Mac OS X
-   (same limitation as [ZCash](https://z.cash/)). Future versions will work on Windows.  
+   As of January 2017 (ZCash v1.0.4) this program is mostly tested on Linux and Mac OS X
+   (same limitation as [ZCash](https://z.cash/)) with experimental support for Windows.  
    The Linux tools you need to build and run the Wallet GUI are Git, Java (JDK7 or later) and 
    Ant. If using Ubuntu Linux, they may be installed via command: 
    ```
@@ -74,7 +74,7 @@ use [ZCash Desktop GUI Wallet - binary release v0.46-beta](https://github.com/va
   3.1. If you have built ZCash from source code:
 
    Assuming you have already built from source code [ZCash](https://z.cash/) in directory `/home/user/zcash/src` (for 
-   example - this is the typical build dir. for ZCash v1.0.3) which contains the command line tools `zcash-cli` 
+   example - this is the typical build dir. for ZCash v1.0.4) which contains the command line tools `zcash-cli` 
    and `zcashd` you need to take the created file `./build/jars/ZCashSwingWalletUI.jar` and copy it 
    to diretcory `/home/user/zcash/src` (the same dir. that contains `zcash-cli` and `zcashd`). Example copy command:
    ```
