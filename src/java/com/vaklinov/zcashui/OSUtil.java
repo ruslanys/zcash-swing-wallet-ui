@@ -164,6 +164,13 @@ public class OSUtil
 
 		return new File(".").getCanonicalPath();
 	}
+	
+	
+	public static File getUserHomeDirectory()
+		throws IOException
+	{
+        return new File(System.getProperty("user.home"));
+	}
 
 
 	public static String getBlockchainDirectory()

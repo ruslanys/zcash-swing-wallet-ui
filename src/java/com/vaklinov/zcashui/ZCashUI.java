@@ -97,7 +97,7 @@ public class ZCashUI
     public ZCashUI(StartupProgressDialog progressDialog)
         throws IOException, InterruptedException, WalletCallException
     {
-        super("ZCash\u00AE Swing Wallet UI 0.55 (beta)");
+        super("ZCash\u00AE Swing Wallet UI 0.56 (beta)");
         
         if (progressDialog != null)
         {
@@ -388,8 +388,10 @@ public class ZCashUI
             {
             	// Custom Windows L&F and font settings
             	UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            	FontUIResource font = new FontUIResource("Lucida Sans Unicode", Font.PLAIN, 11);
-            	UIManager.put("Table.font", font);
+            	
+            	// This font looks good but on Windows 7 it misses some chars like the stars...
+            	//FontUIResource font = new FontUIResource("Lucida Sans Unicode", Font.PLAIN, 11);
+            	//UIManager.put("Table.font", font);
             } else
             {            
 	            for (LookAndFeelInfo ui : UIManager.getInstalledLookAndFeels())

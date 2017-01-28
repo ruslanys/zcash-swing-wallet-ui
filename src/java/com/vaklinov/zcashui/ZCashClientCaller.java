@@ -133,8 +133,15 @@ public class ZCashClientCaller
 	public synchronized Process startDaemon() 
 		throws IOException, InterruptedException 
 	{
+		String exportDir = OSUtil.getUserHomeDirectory().getCanonicalPath();
+		
 	    CommandExecutor starter = new CommandExecutor(
-	            new String[] { zcashd.getCanonicalPath(), "-deamon" });
+	        new String[] 
+	        {
+	        	zcashd.getCanonicalPath(), 
+	        	"-deamon",
+	        	"-exportdir=" + exportDir
+	        });
 	    
 	    return starter.startChildProcess();
 	}
