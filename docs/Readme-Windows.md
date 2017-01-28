@@ -12,13 +12,28 @@ Before installing the GUI wallet on Windows you need to install ZCash on Windows
    1.1. Download this file [ZCash-v1.0.5.zip](http://TODO:)
 
    1.2. Unzip the file so that the executables `zcashd.exe` and `zcash-cli.exe` are in one directory.
+   
+   1.3. Download the [ZCash Proving Key](https://z.cash/downloads/sprout-proving.key)
+        and store it in directory `%APPDATA%\ZcashParams`.
+        
+   1.4. Download the [ZCash Verifying Key](https://z.cash/downloads/sprout-verifying.key)
+        and store it in directory `%APPDATA%\ZcashParams`.
+        
+   After downloading the two keys, they should be available in the same directory similar to:
+![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashKeyDir.png "ZCash keys directory on Windows")
+
+   1.5. Create directory `%APPDATA%\Zcash` and a text file `zcash.conf` in it with the following content:
+   ```
+   addnode=mainnet.z.cash
+   rpcuser=username
+   rpcpassword=SomePassword_PleaseChangeThisValue   ```
 
 2. Installing the ZCash Desktop GUI wallet
 
    You may use the [latest binary release](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/latest).
    Download file [ZCashSwingWalletUI.jar](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/download/0.54-beta/ZCashSwingWalletUI.jar)
    and place it in the same folder as `zcashd.exe` and `zcash-cli.exe`. The result needs to be similar to:
-![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWalletWinDir.png "ZCash dir on Windows")
+![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWinDir.png "ZCash directory on Windows")
 
 4. Running the installed ZCash GUI wallet
 

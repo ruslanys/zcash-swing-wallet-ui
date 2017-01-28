@@ -139,7 +139,6 @@ public class ZCashClientCaller
 	        new String[] 
 	        {
 	        	zcashd.getCanonicalPath(), 
-	        	"-deamon",
 	        	"-exportdir=" + exportDir
 	        });
 	    
@@ -209,6 +208,14 @@ public class ZCashClientCaller
 	public synchronized String[][] getWalletPublicTransactions()
 		throws WalletCallException, IOException, InterruptedException
 	{
+		String notListed = "\u26D4";
+		
+		OS_TYPE os = OSUtil.getOSType();
+		if (os == OS_TYPE.WINDOWS)
+		{
+			notListed = " \u25B6";
+		}
+		
 	    JsonArray jsonTransactions = executeCommandAndGetJsonArray(
 	    	"listtransactions", wrapStringParameter(""), "100");
 	    String strTransactions[][] = new String[jsonTransactions.size()][];
@@ -224,7 +231,7 @@ public class ZCashClientCaller
 	    	strTransactions[i][2] = trans.get("confirmations").toString();
 	    	strTransactions[i][3] = trans.get("amount").toString();
 	    	strTransactions[i][4] = trans.get("time").toString();
-	    	strTransactions[i][5] = trans.getString("address", "\u26D4 (Z Address not listed by wallet!)");
+	    	strTransactions[i][5] = trans.getString("address", notListed + " (Z Address not listed by wallet!)");
 	    	strTransactions[i][6] = trans.get("txid").toString();
 
 	    }
