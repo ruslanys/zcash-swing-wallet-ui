@@ -5,6 +5,8 @@ ZCash for Windows is not yet officially supported.
 Thanks to [@radix42](https://github.com/radix42) an experimental build has been provided.
 Before installing the GUI wallet on Windows you need to install ZCash on Windows.
 
+![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWalletWindows.png "ZCash Wallet for Windows")
+
 1. Installing ZCash on Windows
 
    The easiest way to install it is to use the binary version provided by [@radix42](https://github.com/radix42):
@@ -26,7 +28,8 @@ Before installing the GUI wallet on Windows you need to install ZCash on Windows
    ```
    addnode=mainnet.z.cash
    rpcuser=username
-   rpcpassword=SomePassword_PleaseChangeThisValue   ```
+   rpcpassword=SomePassword_PleaseChangeThisValue   
+   ```
 
 2. Installing the ZCash Desktop GUI wallet
 
