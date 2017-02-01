@@ -7,6 +7,7 @@ presents the information in a user-friendly manner.
 
 ![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWallet.png "Main Window")
 
+#### New/Experimental: [ZCash Desktop GUI Wallet for Windows](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Readme-Windows.md) is available
 #### Experimental: [ZCash Desktop GUI Wallet for MAC OS X](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Readme-Mac.md) is available
 
 ## Building, installing and running the Wallet GUI

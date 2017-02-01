@@ -1,4 +1,3 @@
-# TODO: Unfinished
 # [ZCash](https://z.cash/)[®](#disclaimer) Desktop GUI Wallet - for Windows
 
 ZCash for Windows is not yet officially supported. 
@@ -11,7 +10,7 @@ Before installing the GUI wallet on Windows you need to install ZCash on Windows
 
    The easiest way to install it is to use the binary version provided by [@radix42](https://github.com/radix42):
 
-   1.1. Download this file [ZCash-v1.0.5.zip](http://TODO:)
+   1.1. Download the ZCash node [ZCash-v1.0.5.zip](https://zcash.dl.mercerweiss.com/zcash-v1.0.5-rc1.zip)
 
    1.2. Unzip the file so that the executables `zcashd.exe` and `zcash-cli.exe` are in one directory.
    
@@ -34,7 +33,7 @@ Before installing the GUI wallet on Windows you need to install ZCash on Windows
 2. Installing the ZCash Desktop GUI wallet
 
    You may use the [latest binary release](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/latest).
-   Download file [ZCashSwingWalletUI.jar](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/download/0.54-beta/ZCashSwingWalletUI.jar)
+   Download file [ZCashSwingWalletUI.jar](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/download/0.58-beta/ZCashSwingWalletUI.jar)
    and place it in the same folder as `zcashd.exe` and `zcash-cli.exe`. The result needs to be similar to:
 ![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWinDir.png "ZCash directory on Windows")
 
