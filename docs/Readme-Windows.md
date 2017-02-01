@@ -32,16 +32,17 @@ Before installing the GUI wallet on Windows you need to install ZCash on Windows
 
 2. Installing the ZCash Desktop GUI wallet
 
-   You may use the [latest binary release](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/latest).
+   2.1. Install JDK 8 for Windows - e.g. [use this good tutorial](http://www.wikihow.com/Install-the-Java-Software-Development-Kit)
+
+   2.2. You may use the [latest binary release of the ZCash Desktop GUI wallet](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/latest).
    Download file [ZCashSwingWalletUI.jar](https://github.com/vaklinov/zcash-swing-wallet-ui/releases/download/0.58-beta/ZCashSwingWalletUI.jar)
    and place it in the same folder as `zcashd.exe` and `zcash-cli.exe`. The result needs to be similar to:
 ![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWinDir.png "ZCash directory on Windows")
 
 4. Running the installed ZCash GUI wallet
 
-   Before running the GUI you need to start zcashd (e.g. `zcashd --daemon`). The wallet GUI is a Java program packaged 
-   as an executable JAR file. It may be run from command line or started from another GUI tool (e.g. file manager). 
-   One way to run it from command line is:
+   The wallet GUI is a Java program packaged as an executable JAR file. It may be run from command line or started from another GUI tool 
+   (e.g. file manager). One way to run it from command line is:
    ```
    java -jar ZCashSwingWalletUI.jar
    ```
