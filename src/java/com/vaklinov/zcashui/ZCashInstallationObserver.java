@@ -236,7 +236,7 @@ public class ZCashInstallationObserver
 				{
 					try
 					{
-						size += token.replace(",", "");
+						size += token.replaceAll("[^0-9]", "");
 						if (size.endsWith("K"))
 						{
 							size = size.substring(0, size.length() - 1);
