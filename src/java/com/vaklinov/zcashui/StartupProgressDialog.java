@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -93,7 +94,8 @@ public class StartupProgressDialog extends JFrame {
         } catch (IOException e) { 
         	// Relying on a general exception may be unreliable
         	// may be thrown for an unexpected reason!!! - so message is checked
-        	if (e.getMessage() != null && e.getMessage().contains("error: couldn't connect to server"))
+        	if (e.getMessage() != null && 
+        		e.getMessage().toLowerCase(Locale.ROOT).contains("error: couldn't connect to server"))
         	{
         		shouldStartZCashd = true;
         	}
