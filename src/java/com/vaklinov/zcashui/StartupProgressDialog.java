@@ -87,7 +87,7 @@ public class StartupProgressDialog extends JFrame {
 //                performOSXBundleLaunch();
 //        }
         
-        System.out.println("checking if zcashd is already running...");
+        System.out.println("Splash: checking if zcashd is already running...");
         boolean shouldStartZCashd = false;
         try {
             clientCaller.getDaemonRawRuntimeInfo();
@@ -102,13 +102,13 @@ public class StartupProgressDialog extends JFrame {
         }
         
         if (!shouldStartZCashd) {
-            System.out.println("zcashd already running...");
+            System.out.println("Splash: zcashd already running...");
             // What if started by hand but taking long to initialize???
 //            doDispose();
 //            return;
         } else
         {
-        	System.out.println("zcashd will be started...");
+        	System.out.println("Splash: zcashd will be started...");
         }
         
         final Process daemonProcess = 
