@@ -366,18 +366,32 @@ public class ZCashClientCaller
         {
             if (jsonTransactions.get(i).asObject().getString("txid",  "ERROR!").equals(txID))
             {
+            	if (jsonTransactions.get(i).asObject().get("memo") == null)
+            	{
+            		return null;
+            	}
+            	
                 String MemoHex = jsonTransactions.get(i).asObject().getString("memo", "ERROR!");
+                // Skip empty memos
+                if (MemoHex.startsWith("f60000"))
+                {
+                	return null;
+                }
+                
                 StringBuilder MemoAscii = new StringBuilder("");
                 for (int j = 0; j < MemoHex.length(); j += 2)
                 {
                     String str = MemoHex.substring(j, j + 2);
-                    MemoAscii.append((char) Integer.parseInt(str, 16));
+                    if (!str.equals("00")) // Zero bytes are empty
+                    {
+                    	MemoAscii.append((char) Integer.parseInt(str, 16));
+                    }
                 }
                 return MemoAscii.toString();
             }
         }
 
-        return "";
+        return null;
 	}
 	
 	

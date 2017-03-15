@@ -29,6 +29,7 @@
 package com.vaklinov.zcashui;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
@@ -137,16 +138,17 @@ public class TransactionTable
 			}
 		});
 		
-    JMenuItem showMemoField = new JMenuItem("Show Memo field");
-	popupMenu.add(showMemoField);
+        JMenuItem showMemoField = new JMenuItem("Show transaction memo");
+	    popupMenu.add(showMemoField);
     
-    showMemoField.addActionListener(new ActionListener() 
+        showMemoField.addActionListener(new ActionListener() 
         {	
 			@Override
 			public void actionPerformed(ActionEvent e) 
 			{
 				if ((lastRow >= 0) && (lastColumn >= 0))
 				{
+					Cursor oldCursor = parent.getCursor();
 					try
 					{
 						String txID = TransactionTable.this.getModel().getValueAt(lastRow, 6).toString();
@@ -155,17 +157,46 @@ public class TransactionTable
 						String acc = TransactionTable.this.getModel().getValueAt(lastRow, 5).toString();
 						acc = acc.replaceAll("\"", ""); // In case it has quotes
 						
+						// TODO: We need a much more precise criterion to distinguish T/Z adresses;
+						boolean isZAddress = acc.startsWith("z") && acc.length() > 40;
+						if (!isZAddress)
+						{
+					        JOptionPane.showMessageDialog(
+						            parent,
+						            "The selected transaction does not have as destination a Z (private) \n" +
+						            "address or it is unkonwn (not listed) and thus no memo information \n" +
+						            "about this transaction is available.",
+						            "Memo information is unavailable",
+						            JOptionPane.ERROR_MESSAGE);
+						    return;
+						}
+						
+						
 						System.out.println("Transaction ID for Memo field is: " + txID);
 						System.out.println("Account for Memo field is: " + acc);
+						parent.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+						// TODO: some day support outgoing Z transactions
  						String MemoField = caller.getMemoField(acc, txID);
+ 						parent.setCursor(oldCursor);
  						System.out.println("Memo field is: " + MemoField);
  						
- 						
- 						JOptionPane.showMessageDialog(parent, MemoField,  "Memo Field:", JOptionPane.PLAIN_MESSAGE);
-// 						DetailsDialog dd = new DetailsDialog(parent, details);
-// 						dd.setVisible(true);
+ 						if (MemoField != null)
+ 						{
+ 							JOptionPane.showMessageDialog(
+ 								parent, 
+ 								"The memo contained in the transaction is: \n" + MemoField,  
+ 								"Memo", JOptionPane.PLAIN_MESSAGE);
+ 						} else
+ 						{
+					        JOptionPane.showMessageDialog(
+						            parent,
+						            "The selected transaction does not contain a memo field.",
+						            "Memo field is not available...",
+						            JOptionPane.ERROR_MESSAGE);
+ 						}
 					} catch (Exception ex)
 					{
+						parent.setCursor(oldCursor);
 						ex.printStackTrace();
 						// TODO: report exception to user
 					}
@@ -174,14 +205,11 @@ public class TransactionTable
 					// Log perhaps
 				}
 			}
-		});
-    
+        });
 		
 	} // End constructor
 
 
-
-	
 	
 	
 	private static class DetailsDialog
