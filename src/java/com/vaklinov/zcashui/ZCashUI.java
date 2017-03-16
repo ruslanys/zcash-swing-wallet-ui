@@ -98,7 +98,7 @@ public class ZCashUI
     public ZCashUI(StartupProgressDialog progressDialog)
         throws IOException, InterruptedException, WalletCallException
     {
-        super("ZCash\u00AE Swing Wallet UI 0.66 (beta)");
+        super("ZCash\u00AE Swing Wallet UI 0.67 (beta)");
         
         if (progressDialog != null)
         {
@@ -169,7 +169,7 @@ public class ZCashUI
 
         // Some day the extras menu will be populated with less essential funcitons
         //JMenu extras = new JMenu("Extras");
-        //extras.setMnemonic(KeyEvent.VK_R);
+        //extras.setMnemonic(KeyEvent.VK_ NOT R);
         //extras.add(menuItemAddressBook = new JMenuItem("Address book...", KeyEvent.VK_D));
         //menuItemAddressBook.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, accelaratorKeyMask));        
         //mb.add(extras);

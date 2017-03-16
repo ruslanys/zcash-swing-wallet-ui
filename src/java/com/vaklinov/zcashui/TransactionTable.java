@@ -139,6 +139,7 @@ public class TransactionTable
 		});
 		
         JMenuItem showMemoField = new JMenuItem("Show transaction memo");
+        showMemoField.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, accelaratorKeyMask));
 	    popupMenu.add(showMemoField);
     
         showMemoField.addActionListener(new ActionListener() 
