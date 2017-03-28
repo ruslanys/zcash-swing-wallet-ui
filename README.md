@@ -77,12 +77,23 @@ use [ZCash Desktop GUI Wallet - binary release v0.65-beta](https://github.com/va
    Assuming you have already built from source code [ZCash](https://z.cash/) in directory `/home/user/zcash/src` (for 
    example - this is the typical build dir. for ZCash v1.0.6) which contains the command line tools `zcash-cli` 
    and `zcashd` you need to take the created file `./build/jars/ZCashSwingWalletUI.jar` and copy it 
-   to diretcory `/home/user/zcash/src` (the same dir. that contains `zcash-cli` and `zcashd`). Example copy command:
+   to directory `/home/user/zcash/src` (the same dir. that contains `zcash-cli` and `zcashd`). Example copy command:
    ```
    user@ubuntu:~/build-dir/zcash-swing-wallet-ui$ cp ./build/jars/ZCashSwingWalletUI.jar /home/user/zcash/src    
    ```
+
+  3.2. If you have downloaded the [ZCash Binary distribution](https://z.cash/download.html):
+
+   Assuming you have already downloaded the file `zcash-1.0.x-linux64.tar.gz` which contains the command 
+   line tools `zcash-cli` and `zcashd` and after decompressing it they are in a directory like 
+   `/home/user/zcash-1.0.x/bin/` take the created file `./build/jars/ZCashSwingWalletUI.jar` and copy it 
+   to directory `/home/user/zcash-1.0.x/bin/` (the same dir. that contains `zcash-cli` and `zcashd`). 
+   Example copy command:
+   ```
+   user@ubuntu:~/build-dir/zcash-swing-wallet-ui$ cp ./build/jars/ZCashSwingWalletUI.jar /home/user/zcash-1.0.8/bin/    
+   ```
    
-  3.2. If you have installed the ZCash [binary packages](https://github.com/zcash/zcash/wiki/Debian-binary-packages)
+  3.3. If you have installed the ZCash [binary packages](https://github.com/zcash/zcash/wiki/Debian-binary-packages)
 
    The command line tools `zcash-cli` and `zcashd` are placed by the package installer in:
    ```
