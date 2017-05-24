@@ -234,7 +234,7 @@ public class ZCashClientCaller
 		}
 		
 	    JsonArray jsonTransactions = executeCommandAndGetJsonArray(
-	    	"listtransactions", wrapStringParameter(""), "100");
+	    	"listtransactions", wrapStringParameter(""), "200");
 	    String strTransactions[][] = new String[jsonTransactions.size()][];
 	    for (int i = 0; i < jsonTransactions.size(); i++)
 	    {
@@ -746,23 +746,25 @@ public class ZCashClientCaller
 	}
 	
 	
-	public synchronized void backupWallet(String fileName)
+	public synchronized String backupWallet(String fileName)
 		throws WalletCallException, IOException, InterruptedException
 	{
 		System.out.println("Backup up wallet to location: " + fileName);
 		String response = this.executeCommandAndGetSingleStringResponse(
 			"backupwallet", wrapStringParameter(fileName));
 		// If no exception - obviously successful		
+		return response;
 	}
 	
 	
-	public synchronized void exportWallet(String fileName)
+	public synchronized String exportWallet(String fileName)
 		throws WalletCallException, IOException, InterruptedException
 	{
 		System.out.println("Export wallet keys to location: " + fileName);
 		String response = this.executeCommandAndGetSingleStringResponse(
 			"z_exportwallet", wrapStringParameter(fileName));
 		// If no exception - obviously successful		
+		return response;
 	}
 	
 	
