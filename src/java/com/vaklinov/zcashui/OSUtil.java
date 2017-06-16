@@ -191,7 +191,7 @@ public class OSUtil
 	}
 
 
-	// Directory with program settings to store
+	// Directory with program settings to store as well as logging
 	public static String getSettingsDirectory()
 		throws IOException
 	{
@@ -214,7 +214,7 @@ public class OSUtil
 		{
 			if (!dir.mkdirs())
 			{
-				System.out.println("WARNING: Could not create settings directory: " + dir.getCanonicalPath());
+				Log.warning("Could not create settings directory: " + dir.getCanonicalPath());
 			}
 		}
 

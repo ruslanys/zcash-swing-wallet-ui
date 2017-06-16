@@ -250,7 +250,7 @@ public class SendCashPanel
 					SendCashPanel.this.sendCash();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					
 					String errMessage = "";
 					if (ex instanceof WalletCallException)
@@ -279,7 +279,7 @@ public class SendCashPanel
 					long start = System.currentTimeMillis();
 					String[][] data = SendCashPanel.this.getAddressPositiveBalanceDataFromWallet();
 					long end = System.currentTimeMillis();
-					System.out.println("Gathering of address/balance table data done in " + (end - start) + "ms." );
+					Log.info("Gathering of address/balance table data done in " + (end - start) + "ms." );
 					
 					return data;
 				}
@@ -298,7 +298,7 @@ public class SendCashPanel
 					SendCashPanel.this.updateWalletAddressPositiveBalanceComboBox();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					SendCashPanel.this.errorReporter.reportError(ex);
 				}
 			}
@@ -327,7 +327,7 @@ public class SendCashPanel
 					}
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error", ex);
 					// TODO: clipboard exception handling - do it better
 					// java.awt.datatransfer.UnsupportedFlavorException: Unicode String
 					//SendCashPanel.this.errorReporter.reportError(ex);
@@ -549,7 +549,7 @@ public class SendCashPanel
 					SendCashPanel.this.repaint();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					SendCashPanel.this.errorReporter.reportError(ex);
 				}
 			}

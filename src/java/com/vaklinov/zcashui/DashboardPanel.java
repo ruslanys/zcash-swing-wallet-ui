@@ -169,7 +169,7 @@ public class DashboardPanel
 					long start = System.currentTimeMillis();
 					DaemonInfo daemonInfo = DashboardPanel.this.installationObserver.getDaemonInfo();
 					long end = System.currentTimeMillis();
-					System.out.println("Gathering of dashboard daemon status data done in " + (end - start) + "ms." );
+					Log.info("Gathering of dashboard daemon status data done in " + (end - start) + "ms." );
 					
 					return daemonInfo;
 				}
@@ -186,7 +186,7 @@ public class DashboardPanel
 					DashboardPanel.this.updateDaemonStatusLabel();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					DashboardPanel.this.errorReporter.reportError(ex);
 				}
 			}
@@ -213,7 +213,7 @@ public class DashboardPanel
 					    DashboardPanel.this.walletIsEncrypted = DashboardPanel.this.clientCaller.isWalletEncrypted();
 					}
 					
-					System.out.println("Gathering of dashboard wallet balance data done in " + (end - start) + "ms." );
+					Log.info("Gathering of dashboard wallet balance data done in " + (end - start) + "ms." );
 					
 					return balance;
 				}
@@ -230,7 +230,7 @@ public class DashboardPanel
 					DashboardPanel.this.updateWalletStatusLabel();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					DashboardPanel.this.errorReporter.reportError(ex);
 				}
 			}
@@ -250,7 +250,7 @@ public class DashboardPanel
 					long start = System.currentTimeMillis();
 					String[][] data =  DashboardPanel.this.getTransactionsDataFromWallet();
 					long end = System.currentTimeMillis();
-					System.out.println("Gathering of dashboard wallet transactions table data done in " + (end - start) + "ms." );
+					Log.info("Gathering of dashboard wallet transactions table data done in " + (end - start) + "ms." );
 					
 					return data;
 				}
@@ -267,7 +267,7 @@ public class DashboardPanel
 					DashboardPanel.this.updateWalletTransactionsTable();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					DashboardPanel.this.errorReporter.reportError(ex);
 				}
 			}
@@ -286,7 +286,7 @@ public class DashboardPanel
 					long start = System.currentTimeMillis();
 					NetworkAndBlockchainInfo data =  DashboardPanel.this.clientCaller.getNetworkAndBlockchainInfo();
 					long end = System.currentTimeMillis();
-					System.out.println("Gathering of network and blockchain info data done in " + (end - start) + "ms." );
+					Log.info("Gathering of network and blockchain info data done in " + (end - start) + "ms." );
 					
 					return data;
 				}
@@ -303,7 +303,7 @@ public class DashboardPanel
 					DashboardPanel.this.updateNetworkAndBlockchainLabel();
 				} catch (Exception ex)
 				{
-					ex.printStackTrace();
+					Log.error("Unexpected error: ", ex);
 					DashboardPanel.this.errorReporter.reportError(ex);
 				}
 			}
@@ -556,7 +556,7 @@ public class DashboardPanel
 			
 		if (Util.arraysAreDifferent(lastTransactionsData, newTransactionsData))
 		{
-			System.out.println("Updating table of transactions...");
+			Log.info("Updating table of transactions...");
 			this.remove(transactionsTablePane);
 			this.add(transactionsTablePane = new JScrollPane(
 			             transactionsTable = this.createTransactionsTable(newTransactionsData)),
@@ -686,7 +686,7 @@ public class DashboardPanel
 				trans[3] = df.format(amount);
 			} catch (NumberFormatException nfe)
 			{
-				System.out.println("Error occurred while formatting amount: " + trans[3] + 
+				Log.error("Error occurred while formatting amount: " + trans[3] + 
 						           " - " + nfe.getMessage() + "!");
 			}
 			
@@ -698,7 +698,7 @@ public class DashboardPanel
 				trans[2] = isConfirmed ? ("Yes " + confirmed) : ("No  " + notConfirmed);
 			} catch (NumberFormatException nfe)
 			{
-				System.out.println("Error occurred while formatting confirmations: " + trans[2] + 
+				Log.error("Error occurred while formatting confirmations: " + trans[2] + 
 						           " - " + nfe.getMessage() + "!");
 			}
 		}

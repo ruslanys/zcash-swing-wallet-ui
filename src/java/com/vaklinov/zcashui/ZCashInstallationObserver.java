@@ -84,7 +84,7 @@ public class ZCashInstallationObserver
 			zcashcli = OSUtil.findZCashCommand(OSUtil.getZCashCli());
 		}
 
-		System.out.println("Using ZCash utilities: " +
+		Log.info("Using ZCash utilities: " +
 		                   "zcashd: "    + ((zcashd != null) ? zcashd.getCanonicalPath() : "<MISSING>") + ", " +
 		                   "zcash-cli: " + ((zcashcli != null) ? zcashcli.getCanonicalPath() : "<MISSING>"));
 
@@ -253,7 +253,7 @@ public class ZCashInstallationObserver
 				} catch (NumberFormatException nfe)
 				{
 					info.residentSizeMB = 0;
-					System.out.println("Error: could not find the numeric memory size of zcashd: " + size);
+					Log.error("Error: could not find the numeric memory size of zcashd: " + size);
 				};
 				
 				break;
