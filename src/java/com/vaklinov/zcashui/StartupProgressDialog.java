@@ -60,8 +60,8 @@ public class StartupProgressDialog extends JFrame {
         southPanel.setBorder(BorderFactory.createEmptyBorder(0, 16, 16, 16));
         contentPane.add(imageLabel, BorderLayout.NORTH);
 		JLabel zcashWalletLabel = new JLabel(
-			"<html><span style=\"font-style:italic;font-weight:bold;font-size:25px\">" + 
-		    "ZCash<span style=\"font-style:italic;font-weight:bold;font-size:15px;vertical-align:super\">" + 
+			"<html><span style=\"font-style:italic;font-weight:bold;font-size:3em\">" + 
+		    "ZCash<span style=\"font-style:italic;font-weight:bold;font-size:1.5em;vertical-align:super\">" + 
 		    "\u00AE</span> Wallet</span></html>");
 		zcashWalletLabel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
 		contentPane.add(zcashWalletLabel, BorderLayout.CENTER);
@@ -70,8 +70,9 @@ public class StartupProgressDialog extends JFrame {
         southPanel.add(progressBar, BorderLayout.NORTH);
         progressLabel.setText("Starting...");
         southPanel.add(progressLabel, BorderLayout.SOUTH);
-        setLocationRelativeTo(null);
+        
         pack();
+        setLocationRelativeTo(null);
         
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
