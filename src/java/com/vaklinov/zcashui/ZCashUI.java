@@ -97,7 +97,7 @@ public class ZCashUI
     public ZCashUI(StartupProgressDialog progressDialog)
         throws IOException, InterruptedException, WalletCallException
     {
-        super("ZCash\u00AE Swing Wallet UI 0.71 (beta)");
+        super("ZCash\u00AE Swing Wallet UI 0.72 (beta)");
         
         if (progressDialog != null)
         {
@@ -493,6 +493,17 @@ public class ZCashUI
                 "Error",
                 JOptionPane.ERROR_MESSAGE);
             System.exit(3);
+        }  catch (Error err)
+        {
+        	// Last resort catch for unexpected problems - just to inform the user
+        	Log.error("Unexpected unrecovverable error: ", err);
+            JOptionPane.showMessageDialog(
+                null,
+                "A general unexpected critical/unrecoverable error has occurred: \n" + err.getMessage() + "\n" +
+                "See the console output for more detailed error information!",
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+            System.exit(4);
         }
     }
 }

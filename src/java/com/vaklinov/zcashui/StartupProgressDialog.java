@@ -5,6 +5,7 @@ package com.vaklinov.zcashui;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.FlowLayout;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -60,11 +61,14 @@ public class StartupProgressDialog extends JFrame {
         southPanel.setBorder(BorderFactory.createEmptyBorder(0, 16, 16, 16));
         contentPane.add(imageLabel, BorderLayout.NORTH);
 		JLabel zcashWalletLabel = new JLabel(
-			"<html><span style=\"font-style:italic;font-weight:bold;font-size:3em\">" + 
+			"<html><span style=\"font-style:italic;font-weight:bold;font-size:2.65em\">" + 
 		    "ZCash<span style=\"font-style:italic;font-weight:bold;font-size:1.5em;vertical-align:super\">" + 
 		    "\u00AE</span> Wallet</span></html>");
 		zcashWalletLabel.setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
-		contentPane.add(zcashWalletLabel, BorderLayout.CENTER);
+		// todo - place in a panel with flow center
+		JPanel tempPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 1, 1));
+		tempPanel.add(zcashWalletLabel);
+		contentPane.add(tempPanel, BorderLayout.CENTER);
         contentPane.add(southPanel, BorderLayout.SOUTH);
         progressBar.setIndeterminate(true);
         southPanel.add(progressBar, BorderLayout.NORTH);
