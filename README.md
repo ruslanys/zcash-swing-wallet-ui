@@ -1,4 +1,4 @@
-# [ZCash](https://z.cash/)[®](#disclaimer) Desktop GUI Wallet
+# Desktop GUI Wallet for [ZCash](https://z.cash/)[®](#disclaimer)
 
 ## Graphical user interface wrapper for the [ZCash](https://z.cash/)[®](#disclaimer) command line tools
 
@@ -6,9 +6,6 @@ This program provides a Graphical User Interface (GUI) for the ZCash client tool
 presents the information in a user-friendly manner.
 
 ![Screenshot](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/docs/ZCashWallet.png "Main Window")
-
-#### New/Experimental: [ZCash Desktop GUI Wallet for Windows](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Readme-Windows.md) is available
-#### Experimental: [ZCash Desktop GUI Wallet for MAC OS X](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Readme-Mac.md) is available
 
 ## Building, installing and running the Wallet GUI
 
@@ -25,8 +22,6 @@ Users who are less experienced with working on a command line, may instead use t
 quite-user-friendly [installation guide](https://www.cryptocompare.com/wallets/guides/how-to-install-the-zcash-gui-wallet) 
 and [usage guide](https://www.cryptocompare.com/wallets/guides/how-to-use-the-zcash-gui-wallet).
 The following video also explains how to [set up the GUI wallet](https://www.youtube.com/watch?v=IDifG4h1bgE). 
-Users who insist on downloading a binary release may instead 
-use [ZCash Desktop GUI Wallet - binary release v0.69-beta](https://github.com/vaklinov/zcash-swing-wallet-ui/blob/master/docs/Release_0.69-beta.md)
 
 
 1. Operating system and tools
