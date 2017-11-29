@@ -111,14 +111,6 @@ The following video also explains how to [set up the GUI wallet](https://www.you
    right-click on the `ZCashSwingWalletUI.jar` file and choose the option "Open with OpenJDK 8 Runtime". 
    This will start the ZCash GUI wallet.
 
-### Donations accepted
-At the present time this project is non-commercial in nature and developed by volunteers. If you find the GUI
-Wallet useful, please consider making a donation for its further development. Your contribution matters! Donations 
-are accepted at ZCash T address:
-```
-t1UMGjLDipdfuCdNwxUZTV4FhM34FJXgM8r
-```
-
 ### License
 This program is distributed under an [MIT License](https://github.com/vaklinov/zcash-swing-wallet-ui/raw/master/LICENSE).
 
